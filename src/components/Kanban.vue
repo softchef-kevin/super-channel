@@ -16,7 +16,7 @@ defineProps<{
 </template>
 
 <style scoped>
-@import '@/assets/base.css';
+@import '@/assets/base.scss';
 h1 {
   font-weight: 500;
   font-size: 2.6rem;

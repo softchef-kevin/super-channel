@@ -4,7 +4,7 @@
   </nav>
 </template>
 <style>
-@import '@/assets/base.css';
+@import '@/assets/base.scss';
 nav {
   width: 100%;
   font-size: 12px;
