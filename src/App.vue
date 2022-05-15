@@ -11,15 +11,8 @@ import 'quasar/src/css/index.sass'
   <Header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
-      <Kanban msg="You did it!" />
-      <Nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </Nav>
-    </div>
+    <Kanban prefix="Hi! " />
   </Header>
-  <RouterView />
 </template>
 
 <style>
@@ -29,7 +22,6 @@ import 'quasar/src/css/index.sass'
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-
   font-weight: normal;
 }
 
@@ -44,12 +36,6 @@ import 'quasar/src/css/index.sass'
     place-items: center;
   }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-  
   .logo {
     margin: 0 2rem 0 0;
   }

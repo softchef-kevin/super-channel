@@ -1,47 +1,38 @@
 <script setup lang="ts">
 defineProps<{
-  msg: string
+  prefix: string
 }>()
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a target="_blank" href="https://vitejs.dev/">Vite</a> +
-      <a target="_blank" href="https://vuejs.org/">Vue 3</a>. What's next?
-    </h3>
-  </div>
+  <q-input v-model="name" maxlength="12" class="p-0 w-full" :borderless="true" input-class="name q-ml-md" :input-style="{width:`${name.length/2}em`}">
+    <template v-slot:before>
+      <div class="prefix">
+        {{ prefix }}
+      </div>
+    </template>
+    <template v-slot:after>
+      <q-icon name="refresh" class="cursor-pointer" />
+    </template>
+  </q-input>
 </template>
 
 <style scoped>
 @import '@/assets/base.scss';
-h1 {
+.q-input::v-deep .name, .prefix {
   font-weight: 500;
   font-size: 2.6rem;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-a, .green {
-  text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
 }
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+.q-input::v-deep .name{
+  min-width: 100px;
 }
 </style>
+
+<script lang="ts">
+export default {
+  data: ()=>({
+    name: Math.random().toString().slice(2, 8),
+  })
+}
+</script>
