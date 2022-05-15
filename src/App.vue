@@ -3,6 +3,8 @@ import { RouterLink, RouterView } from 'vue-router'
 import Kanban from '@/components/Kanban.vue'
 import Nav from '@/components/Nav.vue'
 import Header from '@/components/Header.vue'
+import { Quasar } from 'quasar'
+import 'quasar/src/css/index.sass'
 </script>
 
 <template>
